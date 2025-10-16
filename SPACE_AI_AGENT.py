@@ -45,12 +45,11 @@ system_prompt = """
                 """
 
 #----PROMPT-----
-prompt= ChatPromptTemplate([
+prompt = ChatPromptTemplate.from_messages([
     ("system", system_prompt),
     MessagesPlaceholder("history"),
     ("user", "{input}"),
     MessagesPlaceholder("agent_scratchpad")
-
 ])
 
 #---AGENT---
